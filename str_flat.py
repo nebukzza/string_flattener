@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 strings= ["f541e3f0-6c56-4ead-8a35-2ab4eff598b5", "c66b99d2-525e-4ee3-a120-a2c6b14e8c25", 
           "ba75f0b7-1c13-40c8-aa77-0d708d224fc0", "bd7ea710-5a5d-48d2-9366-e0ad476ad7a9", 
           "c7c73afe-7cd5-42e5-b013-04ee95ae6991", "ab297ae7-2d3a-4388-91b6-4cdbfedb50e6", 
@@ -9,25 +7,35 @@ strings= ["f541e3f0-6c56-4ead-8a35-2ab4eff598b5", "c66b99d2-525e-4ee3-a120-a2c6b
           "202b7c1b-e2bc-45cb-bc1f-d2dd5b3c4fa0", "35d44cca-3ec2-4656-b770-794ef7ad7d93", 
           "b00ff852-1b52-4008-b6a2-8f8654469844", "ea8f1f27-57fa-43df-a9e0-617b6cff7601", 
           "f9361d1a-72c2-42ec-b5a2-68b0dc52c66c",]
-c= 0
 
-dic = {key: [] for key in range(16)}
+strings= ["YWIxMzc3NTMtMzU4Ny00YzUzLTlmMTAtYjk2MGNiODFiMzU1Cg==" ,
+          "YzFkMWZkNjktYmE2Ny00MzE0LTlmOTYtY2JmYjU2OWUwNTZjCg==" , 
+          "MmZmMDc3OWUtYjU0Yy00ZDdlLThlMWItYjljODMyNWQ5YmZlCg==" , 
+          "ZjE5Zjk1ZmEtZmU2Ni00NTA2LTgxZmQtOWQwNzllMmFiYjE2Cg==" , 
+          "OTIzZWU2NmEtZDRkMy00ODU4LTg2ZGEtMTU5OWZiYmVhNjE0Cg==" ]
+c= 0
+bs=36
+dic = {key: [] for key in range(bs)}
 
 for string in strings:
     c=0
     #print(string)
-    for s in string[0:16]:
+    for s in string[0:bs]:
         #print(s)
         dic[c].append(s)
         c = c+1
         #print(c)
         #c=0
-for i in range(16):
+for i in range(bs):
     counter = len(sorted(set(dic[i])))
     char = sorted(set(dic[i]))
     #print(char[0])
     if counter == 1:
-        print(char[0], end='')
+        print(char[0], end=' ')
         #print(, end='')
     else:
-        print('*', end='')
+        print('*', end=' ')
+print('\n')
+for u in range(bs):
+    print(str(u), end=' ')
+    #print(dic[i])
